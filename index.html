@@ -146,7 +146,7 @@
     <h2>Construction Request Form</h2>
     <form class+"row g-3" action="https://formsubmit.co/faizy450@gmail.com" method="POST">
         <label>Select Construction Types:</label>
-        <select id="construction-type" onchange="updateSubtypes()">
+        <select id="construction-type" name="construction-type" onchange="updateSubtypes()">
             <option value="Roofing">Roofing</option>
             <option value="Carpentry">Carpentry</option>
             <option value="Floor">Floor</option>
@@ -161,35 +161,35 @@
             <option value="Construction">Construction</option>
         </select>
 
-        <div id="subtype-checkbox">
+        <div id="subtype-checkbox" name="selected-subtypes[]">
             <!-- Subtype checkboxes will be populated dynamically -->
         </div>
 
         <!-- Add "Cancel" button to cancel the last selected work item -->
-        <button type="button" onclick="addSelectedWork()">Add to Selected Work</button>
-        <button type="button" onclick="cancelLastSelectedWork()">Cancel</button>
+        <button type="button" name="add-work" onclick="addSelectedWork()">Add to Selected Work</button>
+        <button type="button" name="cancel-work" onclick="cancelLastSelectedWork()">Cancel</button>
 
-        <div id="selected-work">
+        <div id="selected-work" name="selected-work">
             <label>Selected Work:</label>
         </div>
 
         <label for="first-name">First Name:</label>
-        <input type="text" id="first-name" required>
+        <input type="text" id="first-name" name="first-name" required>
 
         <label for="last-name">Last Name:</label>
-        <input type="text" id="last-name" required>
+        <input type="text" id="last-name" name="last-name" required>
 
         <label for="phone">Phone:</label>
-        <input type="tel" id="phone" required>
+        <input type="tel" id="phone" name="phone" required>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" required>
+        <input type="email" id="email" name="email" required>
 
         <label for="post-code">Post Code:</label>
-        <input type="text" id="post-code" required>
+        <input type="text" id="post-code" name="post-code" required>
 
         <label for="message">Message:</label>
-        <textarea id="message" rows="4"></textarea>
+        <textarea id="message" rows="4" name="message"></textarea>
 
         <button type="submit">Submit</button>
     </form>
